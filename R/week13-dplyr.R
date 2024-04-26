@@ -32,14 +32,18 @@ week13_tbl <- employees_tbl %>%
   filter(!is.na(test_score))
 write_csv(week13_tbl, "../out/week13.csv")
 
+week13_tbl <- read_csv("../out/week13.csv")
 
 # Analysis
 
 ## Total number of managers
-nrow(week13_tbl)
+week13_tbl %>%
+  summarize(n())
 
 ## Total number of unique managers
-length(unique(week13_tbl$employee_id))
+week13_tbl %>%
+  distinct(week13_tbl$employee_id) %>%
+  summarize(n())
 
 ## manager by location
 mbl <- week13_tbl %>%
