@@ -32,7 +32,7 @@ week13_tbl <- employees_tbl %>%
   filter(!is.na(test_score))
 write_csv(week13_tbl, "../out/week13.csv")
 
-week13_tbl <- read_csv("../out/week13.csv")
+# week13_tbl <- read_csv("../out/week13.csv")
 
 # Analysis
 
